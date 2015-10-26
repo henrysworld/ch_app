@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile project(':ch_library')
+    compile files('libs/baseproject.jar')
+    compile files('libs/CocoUnion_AD_SDK_Android_v4.1.2.jar')
+    compile files('libs/comscore.jar')
+    compile files('libs/domob_android_sdk.jar')
+    compile files('libs/fastjson-1.1.24.jar')
+    compile files('libs/InMobi-4.0.4.jar')
+    compile files('libs/mAppTracker.jar')
+    compile files('libs/mobisageSDK.jar')
+    compile files('libs/playerBase.jar')
+    compile files('libs/tracking.jar')
+    compile files('libs/xadsdk.jar')
+    compile files('libs/YoukuAnalytics.jar')
+}

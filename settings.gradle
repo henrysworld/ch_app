@@ -1,0 +1,1 @@
+include ':app', ':ch_library'
